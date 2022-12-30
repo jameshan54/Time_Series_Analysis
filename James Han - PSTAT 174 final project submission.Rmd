@@ -32,7 +32,7 @@ library(ldsr) # perform inverse Box-Cox transform
 
 The "New Car Sales in Norway" dataset describes monthly car sales between 2007 and 2016. As an international student who flies back to my country a lot, I noticed that the prices for flight were way more expensive in certain months. And I was curious if car sales have same logic in it. "Are cars more expensive in certain months?" \
 \
-In order to validate my assumption I used time series including transforming data and make a model to predict future car sales. After fitting a model, I performed diagnostic checking to see if the model is validate. From the prediction, I couldn't find any differences between months but it would give us better insights with having more data.
+In order to validate my assumption I used time series including transforming data and made a model to predict future car sales. After fitting a model, I performed diagnostic checking to see if the model is validate. From the prediction, I couldn't find any differences between months but it would give us better insights with having more data.
 
 ## Introduction 
   
