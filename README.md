@@ -7,8 +7,8 @@ to validate the prediction.
 In order to predict car sales, I used time series techniques including **box-cox transformation**, comparing
 **acfs/pacfs**, **differencing**, **AICc computation**, and **diagnosis checking**. After doing all the model transformations, I compared three different models out of 11 possible models, and chose one model that had the best
 result in diagnosis checking. All 11 possible models had low p-values for **Shapiro-test** so the model that had
-the highest p-value of 0.04635 and passed all the diagnostic tests were chosen. Differencing at different lags
-or applying different values of lambda for Box-Cox transformation didn’t improve the model performance.
+the highest p-value of 0.04635 and passed all the diagnostic tests were chosen.   
+Differencing at different lags or applying different values of lambda for Box-Cox transformation didn’t improve the model performance.  
 Both predictions of transformed data and original data were within the confidence interval. However, the
 prediction was almost linear and was not best at giving meaningful insight but having more data would have
 possibly given better insights.  
