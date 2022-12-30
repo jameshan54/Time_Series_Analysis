@@ -1,5 +1,4 @@
 # Time_Series_Analysis
-Car Sales Analysis using Time Series
 
 The dataset includes a total of 120 observations from January 2007 to December 2016. I was always wondering when the best time is to buy a new car and this dataset caught my attention. My goal in this project is
 to predict car sales, however, considering the lack of observation, I used 12 observations of 2016 as a testset
