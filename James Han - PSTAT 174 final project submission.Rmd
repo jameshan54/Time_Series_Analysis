@@ -342,7 +342,7 @@ I decided to choose model B, ARIMA(5,1,1) considering that it all passed the dia
 ### Forecasting using model B
 
 ```{r}
-par(mfrow=c(1,2))
+par(mfrow=c(1,3))
 
 fit.B <- arima(carstrain.bc, order=c(5,1,1), method= "ML")
 forecast(fit.B)
@@ -366,7 +366,14 @@ ts.plot(carstrain, xlim=c(1,length(carstrain)+12), ylim = c(min(carstrain),max(U
 lines(U, col="blue", lty="dashed")
 lines(L, col="blue", lty="dashed")
 points((length(carstrain)+1):(length(carstrain)+12), pred.orig, col="red")
+
+# plot zoomed forecasts and true values(in car)
+ts.plot(cars, xlim = c(100,length(carstrain)+12), ylim = c(10000,max(U)), col="red", main="Zoomed forecast of original data") # original data
+lines(U, col="blue", lty="dashed")
+lines(L, col="blue", lty="dashed")
+points((length(carstrain)+1):(length(carstrain)+12), pred.orig, col="black") #forecasts
 ```
+
 
 
 ## Conclusion
@@ -374,7 +381,7 @@ Every model passed all the diagnostic checkings but failed Shapiro-Wilk normalit
 \
 Final model for the Box-Cox transform of original data: $Box-Cox(U_t)$ follows ARIMA(5,1,1) model. And the model in algebraic form would be 
 $$\nabla_1Box-Cox(U_t)=(1+0.9314B+0.6781B^2+0.5273B^3+0.4823B^4+0.3266B^5)(1-B)X_t = (1-0.0460B)Z_t, \hat{\sigma_z}^2=1.039e+19$$ \
-Finally, both forecasts of transformed data and original data were within the confidence interval. However, the prediction was almost linear and was not best at giving meaningful insight. Going back to the beginning, differencing the model at differencing lags and applying different $\lambda$ for Box-Cox transformation didn't improve the model performance. Considering the small amount of data, having more data would have possibly given better prediction.
+Finally, both forecasts of transformed data and original data were within the confidence interval. However, the prediction was almost linear and was not best at giving meaningful insight. Going back to the beginning, differencing the model at different lags and applying different $\lambda$ for Box-Cox transformation didn't improve the model performance. Considering the small amount of data, having more data would have possibly given better prediction.
 
 ## Reference
 *Introduction to Time Series and Forecasting*, by P. Brockwell and R. Davis, Springer  
